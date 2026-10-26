@@ -21,8 +21,8 @@ export function buildDNA(): THREE.Group {
   const radius = 0.8, height = 4;
 
   const sphereGeo = new THREE.SphereGeometry(0.07, 8, 8);
-  const matA = mat(0x89E900, 0x5a9900);
-  const matB = mat(0xe8e8e8, 0x6db800);
+  const matA = mat(0x42C8D6, 0x257a84);
+  const matB = mat(0xe8e8e8, 0x3296a1);
 
   for (let i = 0; i < total; i++) {
     const t = i / total;
@@ -44,7 +44,7 @@ export function buildDNA(): THREE.Group {
       const pA = new THREE.Vector3(Math.cos(angle) * radius, y, Math.sin(angle) * radius);
       const pB = new THREE.Vector3(Math.cos(angle + Math.PI) * radius, y, Math.sin(angle + Math.PI) * radius);
       const rungGeo = new THREE.BufferGeometry().setFromPoints([pA, pB]);
-      g.add(new THREE.Line(rungGeo, lineMat(0xaaf033, 0.5)));
+      g.add(new THREE.Line(rungGeo, lineMat(0x92e4ec, 0.5)));
     }
   }
 
@@ -59,8 +59,8 @@ export function buildDNA(): THREE.Group {
   }
   const tubeA = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(ptsA), 120, 0.025, 6, false);
   const tubeB = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(ptsB), 120, 0.025, 6, false);
-  g.add(new THREE.Mesh(tubeA, mat(0x89E900, 0x5a9900, 0.8)));
-  g.add(new THREE.Mesh(tubeB, mat(0xe8e8e8, 0x6db800, 0.8)));
+  g.add(new THREE.Mesh(tubeA, mat(0x42C8D6, 0x257a84, 0.8)));
+  g.add(new THREE.Mesh(tubeB, mat(0xe8e8e8, 0x3296a1, 0.8)));
 
   return g;
 }
@@ -78,14 +78,14 @@ export function buildNeuralNet(): THREE.Group {
       const y = (ni - (count - 1) / 2) * 0.7;
       const pos = new THREE.Vector3(x, y, (Math.random() - 0.5) * 0.4);
       nodePositions.push(pos);
-      const node = new THREE.Mesh(nodeGeo, mat(li % 2 === 0 ? 0x89E900 : 0xe8e8e8, 0x5a9900));
+      const node = new THREE.Mesh(nodeGeo, mat(li % 2 === 0 ? 0x42C8D6 : 0xe8e8e8, 0x257a84));
       node.position.copy(pos);
       g.add(node);
 
       // Glow ring around each node
       const ring = new THREE.Mesh(
         new THREE.TorusGeometry(0.16, 0.012, 6, 32),
-        new THREE.MeshBasicMaterial({ color: 0x89E900, transparent: true, opacity: 0.3 })
+        new THREE.MeshBasicMaterial({ color: 0x42C8D6, transparent: true, opacity: 0.3 })
       );
       ring.position.copy(pos);
       g.add(ring);
@@ -101,7 +101,7 @@ export function buildNeuralNet(): THREE.Group {
         const pA = nodePositions[offset + a];
         const pB = nodePositions[offset + countA + b];
         const geo = new THREE.BufferGeometry().setFromPoints([pA, pB]);
-        g.add(new THREE.Line(geo, lineMat(0x89E900, 0.18)));
+        g.add(new THREE.Line(geo, lineMat(0x42C8D6, 0.18)));
       }
     }
     offset += countA;
@@ -135,10 +135,10 @@ export function buildGear(): THREE.Group {
     shape.holes.push(hole);
 
     const geo = new THREE.ExtrudeGeometry(shape, { depth: 0.25, bevelEnabled: false });
-    return new THREE.Mesh(geo, mat(color, 0x5a9900));
+    return new THREE.Mesh(geo, mat(color, 0x257a84));
   };
 
-  const g1 = makeGear(12, 1.0, 0x89E900);
+  const g1 = makeGear(12, 1.0, 0x42C8D6);
   g1.position.set(0, 0, 0);
   g.add(g1);
 
@@ -146,7 +146,7 @@ export function buildGear(): THREE.Group {
   g2.position.set(1.75, 0, 0);
   g.add(g2);
 
-  const g3 = makeGear(6, 0.5, 0xaaf033);
+  const g3 = makeGear(6, 0.5, 0x92e4ec);
   g3.position.set(-1.55, 0, 0);
   g.add(g3);
 
@@ -173,7 +173,7 @@ export function buildShield(): THREE.Group {
   shape.bezierCurveTo(-1.8, 1, -1.5, 2, 0, 2);
 
   const shieldGeo = new THREE.ExtrudeGeometry(shape, { depth: 0.3, bevelEnabled: true, bevelSize: 0.05, bevelThickness: 0.05 });
-  g.add(new THREE.Mesh(shieldGeo, mat(0x5a9900, 0x2e5200)));
+  g.add(new THREE.Mesh(shieldGeo, mat(0x257a84, 0x174e55)));
 
   // Circuit lines on shield face
   const circuitPts = [
@@ -184,17 +184,17 @@ export function buildShield(): THREE.Group {
   ];
   circuitPts.forEach(pts => {
     const v3 = pts.map(p => new THREE.Vector3(p[0], p[1], 0.32));
-    g.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(v3), lineMat(0x89E900, 0.8)));
+    g.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(v3), lineMat(0x42C8D6, 0.8)));
     // Node dots
     v3.forEach(p => {
-      const dot = new THREE.Mesh(new THREE.SphereGeometry(0.04, 6, 6), mat(0x89E900, 0x5a9900));
+      const dot = new THREE.Mesh(new THREE.SphereGeometry(0.04, 6, 6), mat(0x42C8D6, 0x257a84));
       dot.position.copy(p);
       g.add(dot);
     });
   });
 
   // Center emblem
-  const emblem = new THREE.Mesh(new THREE.OctahedronGeometry(0.35, 0), mat(0x89E900, 0x5a9900));
+  const emblem = new THREE.Mesh(new THREE.OctahedronGeometry(0.35, 0), mat(0x42C8D6, 0x257a84));
   emblem.position.set(0, 0, 0.5);
   g.add(emblem);
 
@@ -213,33 +213,33 @@ export function buildGlobe(): THREE.Group {
   g.add(globe);
 
   // Wireframe latitude/longitude lines
-  g.add(new THREE.Mesh(new THREE.SphereGeometry(1.22, 16, 16), wireMat(0x89E900, 0.15)));
+  g.add(new THREE.Mesh(new THREE.SphereGeometry(1.22, 16, 16), wireMat(0x42C8D6, 0.15)));
 
   // Orbit rings at different inclinations
   [[0, 0, 0], [Math.PI / 3, 0, 0], [Math.PI / 6, Math.PI / 4, 0]].forEach((rot, i) => {
     const ring = new THREE.Mesh(
       new THREE.TorusGeometry(1.6 + i * 0.35, 0.012, 8, 80),
-      new THREE.MeshBasicMaterial({ color: i === 0 ? 0x89E900 : 0xe8e8e8, transparent: true, opacity: 0.35 - i * 0.08 })
+      new THREE.MeshBasicMaterial({ color: i === 0 ? 0x42C8D6 : 0xe8e8e8, transparent: true, opacity: 0.35 - i * 0.08 })
     );
     ring.rotation.set(rot[0], rot[1], rot[2]);
     g.add(ring);
 
     // Satellite on each ring
-    const sat = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.06, 0.18), mat(0xe8e8e8, 0x6db800));
+    const sat = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.06, 0.18), mat(0xe8e8e8, 0x3296a1));
     sat.position.set(1.6 + i * 0.35, 0, 0);
     ring.add(sat);
   });
 
   // Location dots
   const dotGeo = new THREE.SphereGeometry(0.045, 6, 6);
-  const dotMat = mat(0x89E900, 0x5a9900);
+  const dotMat = mat(0x42C8D6, 0x257a84);
   [[0.3, 0.8, 0.9], [-0.7, 0.5, 0.85], [0.9, -0.3, 0.7], [-0.4, -0.7, 0.8], [0.6, 0.6, 0.75]].forEach(p => {
     const v = new THREE.Vector3(p[0], p[1], p[2]).normalize().multiplyScalar(1.25);
     const dot = new THREE.Mesh(dotGeo, dotMat);
     dot.position.copy(v);
     g.add(dot);
     // Pulse ring
-    const pulse = new THREE.Mesh(new THREE.TorusGeometry(0.08, 0.008, 6, 24), new THREE.MeshBasicMaterial({ color: 0x89E900, transparent: true, opacity: 0.5 }));
+    const pulse = new THREE.Mesh(new THREE.TorusGeometry(0.08, 0.008, 6, 24), new THREE.MeshBasicMaterial({ color: 0x42C8D6, transparent: true, opacity: 0.5 }));
     pulse.position.copy(v);
     pulse.lookAt(0, 0, 0);
     g.add(pulse);
@@ -252,14 +252,14 @@ export function buildGlobe(): THREE.Group {
 export function buildPyramid(): THREE.Group {
   const g = new THREE.Group();
   const layers = 5;
-  const colors = [0x89E900, 0x6db800, 0xaaf033, 0x5a9900, 0xe8e8e8];
+  const colors = [0x42C8D6, 0x3296a1, 0x92e4ec, 0x257a84, 0xe8e8e8];
 
   for (let i = 0; i < layers; i++) {
     const scale = 1 - i * 0.16;
     const y = i * 0.55 - (layers * 0.55) / 2;
     const platform = new THREE.Mesh(
       new THREE.CylinderGeometry(scale * 1.4, scale * 1.5, 0.18, 6),
-      mat(colors[i], 0x5a9900)
+      mat(colors[i], 0x257a84)
     );
     platform.position.y = y;
     g.add(platform);
@@ -275,7 +275,7 @@ export function buildPyramid(): THREE.Group {
   }
 
   // Apex crystal
-  const apex = new THREE.Mesh(new THREE.OctahedronGeometry(0.25, 0), mat(0xe8e8e8, 0x89E900));
+  const apex = new THREE.Mesh(new THREE.OctahedronGeometry(0.25, 0), mat(0xe8e8e8, 0x42C8D6));
   apex.position.y = layers * 0.55 / 2 + 0.3;
   g.add(apex);
 
@@ -287,16 +287,16 @@ export function buildSatellites(): THREE.Group {
   const g = new THREE.Group();
 
   // Core
-  const core = new THREE.Mesh(new THREE.IcosahedronGeometry(0.5, 1), mat(0x89E900, 0x5a9900));
+  const core = new THREE.Mesh(new THREE.IcosahedronGeometry(0.5, 1), mat(0x42C8D6, 0x257a84));
   g.add(core);
 
   // Orbit ring
   g.add(new THREE.Mesh(
     new THREE.TorusGeometry(2.2, 0.008, 6, 80),
-    new THREE.MeshBasicMaterial({ color: 0x89E900, transparent: true, opacity: 0.2 })
+    new THREE.MeshBasicMaterial({ color: 0x42C8D6, transparent: true, opacity: 0.2 })
   ));
 
-  const satColors = [0x89E900, 0xe8e8e8, 0xaaf033, 0x89E900, 0x89E900, 0x89E900, 0xaaf033, 0x6db800];
+  const satColors = [0x42C8D6, 0xe8e8e8, 0x92e4ec, 0x42C8D6, 0x42C8D6, 0x42C8D6, 0x92e4ec, 0x3296a1];
   const satGeos = [
     new THREE.BoxGeometry(0.22, 0.22, 0.22),
     new THREE.OctahedronGeometry(0.15, 0),
@@ -310,7 +310,7 @@ export function buildSatellites(): THREE.Group {
 
   for (let i = 0; i < 8; i++) {
     const angle = (i / 8) * Math.PI * 2;
-    const sat = new THREE.Mesh(satGeos[i], mat(satColors[i], 0x5a9900));
+    const sat = new THREE.Mesh(satGeos[i], mat(satColors[i], 0x257a84));
     sat.position.set(Math.cos(angle) * 2.2, Math.sin(angle * 0.5) * 0.4, Math.sin(angle) * 2.2);
     (sat as any)._angle = angle;
     (sat as any)._idx = i;
@@ -324,7 +324,7 @@ export function buildSatellites(): THREE.Group {
 export function buildGridPanels(): THREE.Group {
   const g = new THREE.Group();
   const cols = 4, rows = 3;
-  const colors = [0x89E900, 0xe8e8e8, 0xaaf033, 0x89E900, 0x89E900, 0x89E900, 0xaaf033, 0x6db800, 0x89E900, 0xe8e8e8, 0xaaf033, 0x89E900];
+  const colors = [0x42C8D6, 0xe8e8e8, 0x92e4ec, 0x42C8D6, 0x42C8D6, 0x42C8D6, 0x92e4ec, 0x3296a1, 0x42C8D6, 0xe8e8e8, 0x92e4ec, 0x42C8D6];
 
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < cols; c++) {
@@ -375,12 +375,12 @@ export function buildCrystal(): THREE.Group {
   // Central large crystal
   const mainCrystal = new THREE.Mesh(
     new THREE.OctahedronGeometry(0.9, 0),
-    new THREE.MeshStandardMaterial({ color: 0x89E900, metalness: 0.9, roughness: 0.05, emissive: 0x5a9900, emissiveIntensity: 0.6, transparent: true, opacity: 0.85 })
+    new THREE.MeshStandardMaterial({ color: 0x42C8D6, metalness: 0.9, roughness: 0.05, emissive: 0x257a84, emissiveIntensity: 0.6, transparent: true, opacity: 0.85 })
   );
   g.add(mainCrystal);
 
   // Wireframe overlay
-  g.add(new THREE.Mesh(new THREE.OctahedronGeometry(0.92, 0), wireMat(0xaaf033, 0.3)));
+  g.add(new THREE.Mesh(new THREE.OctahedronGeometry(0.92, 0), wireMat(0x92e4ec, 0.3)));
 
   // 6 satellite crystals
   const dirs = [
@@ -388,7 +388,7 @@ export function buildCrystal(): THREE.Group {
     [0, 1.8, 0], [0, -1.8, 0],
     [0, 0, 1.8], [0, 0, -1.8],
   ];
-  const satColors = [0x89E900, 0xaaf033, 0x89E900, 0xe8e8e8, 0x89E900, 0x89E900];
+  const satColors = [0x42C8D6, 0x92e4ec, 0x42C8D6, 0xe8e8e8, 0x42C8D6, 0x42C8D6];
   dirs.forEach((d, i) => {
     const crystal = new THREE.Mesh(
       new THREE.OctahedronGeometry(0.35, 0),
@@ -420,11 +420,11 @@ export function buildWaveRibbon(): THREE.Group {
   }
 
   // Multiple ribbon layers
-  [0x89E900, 0x89E900, 0xe8e8e8].forEach((color, li) => {
+  [0x42C8D6, 0x42C8D6, 0xe8e8e8].forEach((color, li) => {
     const offsetPts = pts.map(p => new THREE.Vector3(p.x, p.y + li * 0.3 - 0.3, p.z + li * 0.2));
     const curve = new THREE.CatmullRomCurve3(offsetPts);
     const tube = new THREE.TubeGeometry(curve, 80, 0.04 - li * 0.01, 6, false);
-    g.add(new THREE.Mesh(tube, mat(color, 0x5a9900, 0.85)));
+    g.add(new THREE.Mesh(tube, mat(color, 0x257a84, 0.85)));
   });
 
   // Floating nodes along the wave
@@ -434,7 +434,7 @@ export function buildWaveRibbon(): THREE.Group {
     const x = (t - 0.5) * width;
     const y = Math.sin(t * Math.PI * 3) * amplitude;
     const z = Math.cos(t * Math.PI * 2) * 0.4;
-    const node = new THREE.Mesh(nodeGeo, mat(0x89E900, 0x5a9900));
+    const node = new THREE.Mesh(nodeGeo, mat(0x42C8D6, 0x257a84));
     node.position.set(x, y, z);
     g.add(node);
   }
@@ -449,14 +449,14 @@ export function buildSignalTower(): THREE.Group {
   // Tower base
   const base = new THREE.Mesh(
     new THREE.CylinderGeometry(0.15, 0.4, 2.5, 8),
-    mat(0xe8e8e8, 0x89E900)
+    mat(0xe8e8e8, 0x42C8D6)
   );
   g.add(base);
 
   // Tower top antenna
   const antenna = new THREE.Mesh(
     new THREE.CylinderGeometry(0.02, 0.08, 1.2, 6),
-    mat(0x89E900, 0x5a9900)
+    mat(0x42C8D6, 0x257a84)
   );
   antenna.position.y = 1.85;
   g.add(antenna);
@@ -465,7 +465,7 @@ export function buildSignalTower(): THREE.Group {
   [0.6, 1.1, 1.7, 2.4].forEach((r, i) => {
     const ring = new THREE.Mesh(
       new THREE.TorusGeometry(r, 0.018, 6, 48),
-      new THREE.MeshBasicMaterial({ color: 0x89E900, transparent: true, opacity: 0.5 - i * 0.1 })
+      new THREE.MeshBasicMaterial({ color: 0x42C8D6, transparent: true, opacity: 0.5 - i * 0.1 })
     );
     ring.rotation.x = Math.PI / 2;
     ring.position.y = 1.2;
@@ -476,7 +476,7 @@ export function buildSignalTower(): THREE.Group {
   // Base platform
   const platform = new THREE.Mesh(
     new THREE.CylinderGeometry(0.8, 0.8, 0.08, 8),
-    mat(0x89E900, 0x5a9900)
+    mat(0x42C8D6, 0x257a84)
   );
   platform.position.y = -1.3;
   g.add(platform);
@@ -486,7 +486,7 @@ export function buildSignalTower(): THREE.Group {
     const angle = (i / 4) * Math.PI * 2;
     const strut = new THREE.Mesh(
       new THREE.CylinderGeometry(0.02, 0.02, 1.4, 4),
-      mat(0xe8e8e8, 0x6db800, 0.7)
+      mat(0xe8e8e8, 0x3296a1, 0.7)
     );
     strut.position.set(Math.cos(angle) * 0.35, -0.6, Math.sin(angle) * 0.35);
     strut.rotation.z = Math.cos(angle) * 0.4;

@@ -41,7 +41,7 @@ export default function About() {
             alt="Enqueue"
             width={100}
             height={100}
-            style={{ width: 100, height: 100, objectFit: "contain", filter: "drop-shadow(0 0 6px rgba(137,233,0,0.4))" }}
+            style={{ width: 100, height: 100, objectFit: "contain", filter: "drop-shadow(0 0 6px rgba(66, 200, 214,0.4))" }}
             priority
           />
           <span style={{ fontFamily: "monospace", fontSize: 30, letterSpacing: "0.22em", textTransform: "uppercase", color: "#ffffff" }}>About Enqueue</span>

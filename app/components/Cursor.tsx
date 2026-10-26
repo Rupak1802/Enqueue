@@ -21,9 +21,9 @@ export default function Cursor() {
 
     const onEnter = () => {
       dot.style.transform = "translate(-50%,-50%) scale(2.5)";
-      dot.style.background = "#89E900";
+      dot.style.background = "#42C8D6";
       ring.style.transform = "translate(-50%,-50%) scale(1.8)";
-      ring.style.borderColor = "#89E900";
+      ring.style.borderColor = "#42C8D6";
     };
 
     const onLeave = () => {

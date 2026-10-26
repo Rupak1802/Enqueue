@@ -40,8 +40,8 @@ export default function EnqueueLogo({ variant = "mark", height = 40 }: LogoProps
           <stop offset="100%" stopColor="#555555" stopOpacity="0.4" />
         </linearGradient>
         <linearGradient id={tg} x1="50%" y1="0%" x2="50%" y2="100%">
-          <stop offset="0%"   stopColor="#89E900" />
-          <stop offset="100%" stopColor="#5a9900" />
+          <stop offset="0%"   stopColor="#42C8D6" />
+          <stop offset="100%" stopColor="#257a84" />
         </linearGradient>
         <filter id={sh} x="-20%" y="-20%" width="140%" height="140%">
           <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor="#000000" floodOpacity="0.5" />
@@ -96,12 +96,12 @@ export default function EnqueueLogo({ variant = "mark", height = 40 }: LogoProps
       {/* Tagline */}
       {variant === "full" && (
         <g transform="translate(0, 60)">
-          <line x1="0" y1="10" x2="40" y2="10" stroke="#89E900" strokeWidth="0.8" strokeOpacity="0.6" />
+          <line x1="0" y1="10" x2="40" y2="10" stroke="#42C8D6" strokeWidth="0.8" strokeOpacity="0.6" />
           <text x="130" y="14" textAnchor="middle" fontFamily="'CommitMono', monospace"
-            fontSize="9" fontWeight="400" letterSpacing="4" fill="#89E900" fillOpacity="0.75">
+            fontSize="9" fontWeight="400" letterSpacing="4" fill="#42C8D6" fillOpacity="0.75">
             BUILD BEYOND LIMITS
           </text>
-          <line x1="220" y1="10" x2="260" y2="10" stroke="#89E900" strokeWidth="0.8" strokeOpacity="0.6" />
+          <line x1="220" y1="10" x2="260" y2="10" stroke="#42C8D6" strokeWidth="0.8" strokeOpacity="0.6" />
         </g>
       )}
     </svg>

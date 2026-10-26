@@ -51,7 +51,7 @@ export default function Navbar() {
             </a>
           ))}
           <a href="#contact" style={{ padding: "10px 24px", background: "#ffffff", color: "#222222", fontWeight: 700, fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", textDecoration: "none", transition: "all 0.2s" }}
-            onMouseEnter={e => { e.currentTarget.style.background = "#89E900"; e.currentTarget.style.color = "#222222"; }}
+            onMouseEnter={e => { e.currentTarget.style.background = "#42C8D6"; e.currentTarget.style.color = "#222222"; }}
             onMouseLeave={e => { e.currentTarget.style.background = "#ffffff"; e.currentTarget.style.color = "#222222"; }}>
             Book a Call
           </a>
@@ -80,11 +80,11 @@ export default function Navbar() {
               overflow: "hidden",
             }}
           >
-            {/* Green accent line top */}
+            {/* Blue accent line top */}
             <motion.div
               initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              style={{ height: 2, background: "linear-gradient(90deg, #89E900, transparent)", transformOrigin: "left" }}
+              style={{ height: 2, background: "linear-gradient(90deg, #42C8D6, transparent)", transformOrigin: "left" }}
             />
 
             {/* Header */}
@@ -92,7 +92,7 @@ export default function Navbar() {
               <EnqueueLogo variant="mark" height={30} />
               <button onClick={() => setOpen(false)}
                 style={{ background: "none", border: "1px solid rgba(255,255,255,0.2)", cursor: "pointer", color: "#ffffff", width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, transition: "all 0.2s" }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = "#89E900"; e.currentTarget.style.color = "#89E900"; }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = "#42C8D6"; e.currentTarget.style.color = "#42C8D6"; }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; e.currentTarget.style.color = "#ffffff"; }}>
                 ✕
               </button>
@@ -114,23 +114,23 @@ export default function Navbar() {
                   onMouseEnter={e => {
                     const num = e.currentTarget.querySelector(".nav-num") as HTMLElement;
                     const txt = e.currentTarget.querySelector(".nav-txt") as HTMLElement;
-                    if (num) num.style.color = "#89E900";
-                    if (txt) { txt.style.color = "#89E900"; txt.style.letterSpacing = "0.15em"; }
+                    if (num) num.style.color = "#42C8D6";
+                    if (txt) { txt.style.color = "#42C8D6"; txt.style.letterSpacing = "0.15em"; }
                   }}
                   onMouseLeave={e => {
                     const num = e.currentTarget.querySelector(".nav-num") as HTMLElement;
                     const txt = e.currentTarget.querySelector(".nav-txt") as HTMLElement;
-                    if (num) num.style.color = "rgba(137,233,0,0.4)";
+                    if (num) num.style.color = "rgba(66, 200, 214,0.4)";
                     if (txt) { txt.style.color = "#ffffff"; txt.style.letterSpacing = "0.1em"; }
                   }}
                 >
-                  <span className="nav-num" style={{ fontFamily: "monospace", fontSize: 11, color: "rgba(137,233,0,0.4)", minWidth: 28, transition: "color 0.2s" }}>
+                  <span className="nav-num" style={{ fontFamily: "monospace", fontSize: 11, color: "rgba(66, 200, 214,0.4)", minWidth: 28, transition: "color 0.2s" }}>
                     0{i + 1}
                   </span>
                   <span className="nav-txt" style={{ fontSize: 28, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#ffffff", transition: "all 0.2s", flex: 1 }}>
                     {l.label}
                   </span>
-                  <span style={{ color: "rgba(137,233,0,0.3)", fontSize: 18 }}>→</span>
+                  <span style={{ color: "rgba(66, 200, 214,0.3)", fontSize: 18 }}>→</span>
                 </motion.a>
               ))}
             </div>
@@ -146,7 +146,7 @@ export default function Navbar() {
               <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 20 }}>
                 <a href="mailto:enqueuethere@gmail.com"
                   style={{ fontFamily: "monospace", fontSize: 11, letterSpacing: "0.15em", color: "#ffffff", textDecoration: "none", transition: "color 0.2s" }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "#89E900")}
+                  onMouseEnter={e => (e.currentTarget.style.color = "#42C8D6")}
                   onMouseLeave={e => (e.currentTarget.style.color = "#ffffff")}>
                   enqueuethere@gmail.com
                 </a>
@@ -159,14 +159,13 @@ export default function Navbar() {
                 </span>
                 <div style={{ display: "flex", gap: 8 }}>
                   {[
-                    { href: "https://www.linkedin.com/in/enqueue-7771ab410/", label: "LI" },
-                    { href: "https://twitter.com/enqueue", label: "X" },
-                    { href: "https://instagram.com/enqueue", label: "IG" },
+                    { href: "https://www.linkedin.com/in/enqueue-undefined-109234446", label: "LI" },
+                    { href: "https://instagram.com/enqueuethere/", label: "IG" },
                     { href: "https://wa.me/917305429059", label: "WA" },
                   ].map(s => (
                     <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                       style={{ width: 32, height: 32, border: "1px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "#ffffff", textDecoration: "none", fontFamily: "monospace", fontSize: 9, letterSpacing: "0.1em", transition: "all 0.2s" }}
-                      onMouseEnter={e => { e.currentTarget.style.borderColor = "#89E900"; e.currentTarget.style.color = "#89E900"; }}
+                      onMouseEnter={e => { e.currentTarget.style.borderColor = "#42C8D6"; e.currentTarget.style.color = "#42C8D6"; }}
                       onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; e.currentTarget.style.color = "#ffffff"; }}>
                       {s.label}
                     </a>
@@ -175,11 +174,11 @@ export default function Navbar() {
               </div>
             </motion.div>
 
-            {/* Green accent line bottom */}
+            {/* Blue accent line bottom */}
             <motion.div
               initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              style={{ height: 2, background: "linear-gradient(90deg, transparent, #89E900)", transformOrigin: "right" }}
+              style={{ height: 2, background: "linear-gradient(90deg, transparent, #42C8D6)", transformOrigin: "right" }}
             />
           </motion.div>
         )}

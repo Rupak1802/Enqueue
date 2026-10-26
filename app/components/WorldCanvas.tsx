@@ -12,17 +12,17 @@ import {
 gsap.registerPlugin(ScrollTrigger);
 
 const CONFIGS = [
-  { cam: [0,0,7],    rot:[0,0],       col:0x89E900, em:0x5a9900, fog:0.030, objIdx:0  }, // Hero1 — DNA
-  { cam: [2,1.2,5],  rot:[0.25,1.26], col:0xaaf033, em:0x4a7700, fog:0.028, objIdx:1  }, // Hero2 — Neural
-  { cam:[-2,-1,5.5], rot:[-0.2,2.51], col:0x6db800, em:0x3d6600, fog:0.032, objIdx:2  }, // Hero3 — Gear
-  { cam:[0,1.8,8],   rot:[0.45,3.77], col:0x5a9900, em:0x2e5200, fog:0.025, objIdx:3  }, // Hero4 — Shield
-  { cam:[0,0,6],     rot:[0,5.65],    col:0x89E900, em:0x5a9900, fog:0.030, objIdx:4  }, // Hero5 — Globe
-  { cam:[3,0.5,6],   rot:[0.1,6.8],   col:0x89E900, em:0x3d6600, fog:0.022, objIdx:5  }, // About — Pyramid
-  { cam:[-3,-0.5,5], rot:[-0.15,8.2], col:0x6db800, em:0x2a0faa, fog:0.028, objIdx:6  }, // Services — Satellites
-  { cam:[0,-1.5,7],  rot:[0.3,9.4],   col:0x89E900, em:0x5a9900, fog:0.020, objIdx:7  }, // Portfolio — Panels
-  { cam:[2,1,5.5],   rot:[-0.2,10.8], col:0x89E900, em:0x5a9900, fog:0.026, objIdx:8  }, // Values — Crystal
-  { cam:[-1,0.5,6],  rot:[0.1,12.0],  col:0x89E900, em:0x5a9900, fog:0.024, objIdx:9  }, // Testimonials — Wave
-  { cam:[0,0,5.5],   rot:[0,13.2],    col:0xe8e8e8, em:0x89E900, fog:0.030, objIdx:10 }, // Contact — Tower
+  { cam: [0,0,7],    rot:[0,0],       col:0x42C8D6, em:0x257a84, fog:0.030, objIdx:0  }, // Hero1 — DNA
+  { cam: [2,1.2,5],  rot:[0.25,1.26], col:0x92e4ec, em:0x206c76, fog:0.028, objIdx:1  }, // Hero2 — Neural
+  { cam:[-2,-1,5.5], rot:[-0.2,2.51], col:0x3296a1, em:0x1e626a, fog:0.032, objIdx:2  }, // Hero3 — Gear
+  { cam:[0,1.8,8],   rot:[0.45,3.77], col:0x257a84, em:0x174e55, fog:0.025, objIdx:3  }, // Hero4 — Shield
+  { cam:[0,0,6],     rot:[0,5.65],    col:0x42C8D6, em:0x257a84, fog:0.030, objIdx:4  }, // Hero5 — Globe
+  { cam:[3,0.5,6],   rot:[0.1,6.8],   col:0x42C8D6, em:0x1e626a, fog:0.022, objIdx:5  }, // About — Pyramid
+  { cam:[-3,-0.5,5], rot:[-0.15,8.2], col:0x3296a1, em:0x2a0faa, fog:0.028, objIdx:6  }, // Services — Satellites
+  { cam:[0,-1.5,7],  rot:[0.3,9.4],   col:0x42C8D6, em:0x257a84, fog:0.020, objIdx:7  }, // Portfolio — Panels
+  { cam:[2,1,5.5],   rot:[-0.2,10.8], col:0x42C8D6, em:0x257a84, fog:0.026, objIdx:8  }, // Values — Crystal
+  { cam:[-1,0.5,6],  rot:[0.1,12.0],  col:0x42C8D6, em:0x257a84, fog:0.024, objIdx:9  }, // Testimonials — Wave
+  { cam:[0,0,5.5],   rot:[0,13.2],    col:0xe8e8e8, em:0x42C8D6, fog:0.030, objIdx:10 }, // Contact — Tower
 ];
 
 export default function WorldCanvas() {
@@ -56,10 +56,10 @@ export default function WorldCanvas() {
 
     /* ── Lights ───────────────────────────────────────────────────── */
     scene.add(new THREE.AmbientLight(0xe8e8e8, 0.4));
-    const dir = new THREE.DirectionalLight(0x89E900, 2);
+    const dir = new THREE.DirectionalLight(0x42C8D6, 2);
     dir.position.set(5, 8, 5);
     scene.add(dir);
-    const pt1 = new THREE.PointLight(0x89E900, 5, 30);
+    const pt1 = new THREE.PointLight(0x42C8D6, 5, 30);
     scene.add(pt1);
     const pt2 = new THREE.PointLight(0xe8e8e8, 3, 25);
     pt2.position.set(4, -3, -4);
@@ -102,7 +102,7 @@ export default function WorldCanvas() {
     scene.add(particles);
 
     /* ── Grid floor ───────────────────────────────────────────────── */
-    const grid = new THREE.GridHelper(60, 60, 0x89E900, 0x89E900);
+    const grid = new THREE.GridHelper(60, 60, 0x42C8D6, 0x42C8D6);
     (grid.material as THREE.Material).transparent = true;
     (grid.material as THREE.Material).opacity = 0.04;
     grid.position.y = -6;

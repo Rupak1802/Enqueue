@@ -3,7 +3,7 @@
 @theme {
   --color-dark: #222222;
   --color-offblue: #ffffff;
-  --color-accent: #89E900;
+  --color-accent: #42C8D6;
   --font-sans: 'Grotesk', system-ui, sans-serif;
   --font-mono: 'CommitMono', 'Courier New', monospace;
 }
@@ -45,8 +45,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-::selection { background: #89E900; color: #222222; }
+::selection { background: #42C8D6; color: #222222; }
 
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: #222222; }
-::-webkit-scrollbar-thumb { background: #89E900; }
+::-webkit-scrollbar-thumb { background: #42C8D6; }

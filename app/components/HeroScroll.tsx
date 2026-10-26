@@ -57,9 +57,9 @@ export default function HeroScroll() {
     const setDot = (i: number) => {
       dotsRef.current.forEach((d, j) => {
         if (!d) return;
-        d.style.background = j === i ? "#89E900" : "#ffffff";
+        d.style.background = j === i ? "#42C8D6" : "#ffffff";
         d.style.transform  = j === i ? "scale(1.7)" : "scale(1)";
-        d.style.boxShadow  = j === i ? "0 0 10px #89E900" : "none";
+        d.style.boxShadow  = j === i ? "0 0 10px #42C8D6" : "none";
       });
     };
 
@@ -126,7 +126,7 @@ export default function HeroScroll() {
         {/* Text block */}
         <div ref={textRef} style={{ position: "absolute", bottom: 110, left: 48, maxWidth: 580, zIndex: 10, pointerEvents: "auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-            <div style={{ width: 8, height: 8, background: "#89E900", flexShrink: 0 }} />
+            <div style={{ width: 8, height: 8, background: "#42C8D6", flexShrink: 0 }} />
             <span ref={labelRef} style={{ fontFamily: "monospace", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "#ffffff" }}>
               {SECTIONS[0].label}
             </span>
@@ -141,7 +141,7 @@ export default function HeroScroll() {
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
             <a ref={ctaRef} href={SECTIONS[0].ctaHref}
               style={{ padding: "13px 32px", background: "#ffffff", color: "#222222", fontWeight: 700, fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", textDecoration: "none", transition: "all .25s", display: "inline-flex", alignItems: "center" }}
-              onMouseEnter={e => { e.currentTarget.style.background = "#89E900"; e.currentTarget.style.color = "#222222"; }}
+              onMouseEnter={e => { e.currentTarget.style.background = "#42C8D6"; e.currentTarget.style.color = "#222222"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "#ffffff"; e.currentTarget.style.color = "#222222"; }}>
               {SECTIONS[0].cta}
             </a>
@@ -161,20 +161,20 @@ export default function HeroScroll() {
               onClick={() => document.getElementById(`ss-${i}`)?.scrollIntoView({ behavior: "smooth" })}>
               <span style={{ fontFamily: "monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(232,232,232,.28)" }}>{s.label}</span>
               <div ref={el => { dotsRef.current[i] = el; }}
-                style={{ width: 7, height: 7, borderRadius: "50%", background: i === 0 ? "#89E900" : "rgba(232,232,232,.2)", transition: "all .3s", boxShadow: i === 0 ? "0 0 10px #89E900" : "none" }} />
+                style={{ width: 7, height: 7, borderRadius: "50%", background: i === 0 ? "#42C8D6" : "rgba(232,232,232,.2)", transition: "all .3s", boxShadow: i === 0 ? "0 0 10px #42C8D6" : "none" }} />
             </div>
           ))}
         </div>
 
         {/* Progress bar */}
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 2, background: "rgba(232,232,232,.06)", zIndex: 10 }}>
-          <div ref={progRef} style={{ height: "100%", background: "linear-gradient(90deg,#89E900,#ffffff)", transformOrigin: "left center", transform: `scaleX(${1 / SECTIONS.length})` }} />
+          <div ref={progRef} style={{ height: "100%", background: "linear-gradient(90deg,#42C8D6,#ffffff)", transformOrigin: "left center", transform: `scaleX(${1 / SECTIONS.length})` }} />
         </div>
 
         {/* Scroll hint */}
         <div style={{ position: "absolute", bottom: 28, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 8, zIndex: 10 }}>
           <span style={{ fontFamily: "monospace", fontSize: 9, letterSpacing: ".25em", textTransform: "uppercase", color: "rgba(232,232,232,.2)" }}>Scroll</span>
-          <div style={{ width: 1, height: 44, background: "linear-gradient(to bottom,#89E900,transparent)", animation: "sp 1.8s ease-in-out infinite" }} />
+          <div style={{ width: 1, height: 44, background: "linear-gradient(to bottom,#42C8D6,transparent)", animation: "sp 1.8s ease-in-out infinite" }} />
         </div>
       </div>
 

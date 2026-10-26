@@ -102,8 +102,8 @@ export default function Portfolio() {
 
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.5 }}
           style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-          <div style={{ width: 8, height: 8, background: "#89E900", boxShadow: "0 0 10px #89E900" }} />
-          <span style={{ fontFamily: "monospace", fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "#89E900" }}>Our Work</span>
+          <div style={{ width: 8, height: 8, background: "#42C8D6", boxShadow: "0 0 10px #42C8D6" }} />
+          <span style={{ fontFamily: "monospace", fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "#42C8D6" }}>Our Work</span>
         </motion.div>
 
         <motion.h2 variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.7, delay: 0.1 }}
@@ -123,9 +123,9 @@ export default function Portfolio() {
                 textTransform: "uppercase",
                 cursor: "pointer",
                 transition: "all 0.2s",
-                background: active === c ? "#89E900" : "rgba(34,34,34,0.5)",
+                background: active === c ? "#42C8D6" : "rgba(34,34,34,0.5)",
                 color: active === c ? "#222222" : "#ffffff",
-                border: active === c ? "1px solid #89E900" : "1px solid rgba(255,255,255,0.2)",
+                border: active === c ? "1px solid #42C8D6" : "1px solid rgba(255,255,255,0.2)",
                 fontWeight: active === c ? 700 : 400,
                 backdropFilter: "blur(4px)",
               }}>
@@ -150,9 +150,9 @@ export default function Portfolio() {
                 justifyContent: "space-between",
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = "#89E900";
+                e.currentTarget.style.borderColor = "#42C8D6";
                 e.currentTarget.style.transform = "translateY(-4px)";
-                e.currentTarget.style.boxShadow = "0 16px 40px -10px rgba(137,233,0,0.15)";
+                e.currentTarget.style.boxShadow = "0 16px 40px -10px rgba(66, 200, 214,0.15)";
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
@@ -161,7 +161,7 @@ export default function Portfolio() {
               }}>
               <div>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16, flexWrap: "wrap", gap: 8 }}>
-                  <span style={{ fontSize: 10, fontFamily: "monospace", letterSpacing: "0.18em", textTransform: "uppercase", color: "#89E900", border: "1px solid rgba(137,233,0,0.4)", padding: "3px 8px", background: "rgba(137,233,0,0.06)" }}>
+                  <span style={{ fontSize: 10, fontFamily: "monospace", letterSpacing: "0.18em", textTransform: "uppercase", color: "#42C8D6", border: "1px solid rgba(66, 200, 214,0.4)", padding: "3px 8px", background: "rgba(66, 200, 214,0.06)" }}>
                     {p.cat}
                   </span>
                   <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
@@ -170,15 +170,15 @@ export default function Portfolio() {
                       fontFamily: "monospace",
                       letterSpacing: "0.15em",
                       textTransform: "uppercase",
-                      color: "#89E900",
-                      border: "1px solid rgba(137,233,0,0.4)",
+                      color: "#42C8D6",
+                      border: "1px solid rgba(66, 200, 214,0.4)",
                       padding: "3px 8px",
-                      background: "rgba(137,233,0,0.08)",
+                      background: "rgba(66, 200, 214,0.08)",
                       display: "flex",
                       alignItems: "center",
                       gap: 5,
                     }}>
-                      <span style={{ width: 5, height: 5, borderRadius: "50%", background: "#89E900", boxShadow: "0 0 6px #89E900" }} />
+                      <span style={{ width: 5, height: 5, borderRadius: "50%", background: "#42C8D6", boxShadow: "0 0 6px #42C8D6" }} />
                       {p.status}
                     </span>
                     <span style={{ fontSize: 11, fontFamily: "monospace", color: "rgba(255,255,255,0.4)" }}>{p.year}</span>
@@ -194,7 +194,7 @@ export default function Portfolio() {
 
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 24 }}>
                   {p.tech.map(t => (
-                    <span key={t} style={{ fontSize: 10, fontFamily: "monospace", color: "#89E900", background: "rgba(137,233,0,0.08)", border: "1px solid rgba(137,233,0,0.2)", padding: "4px 10px" }}>
+                    <span key={t} style={{ fontSize: 10, fontFamily: "monospace", color: "#42C8D6", background: "rgba(66, 200, 214,0.08)", border: "1px solid rgba(66, 200, 214,0.2)", padding: "4px 10px" }}>
                       {t}
                     </span>
                   ))}
@@ -224,9 +224,9 @@ export default function Portfolio() {
                   marginTop: 8,
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.background = "#89E900";
+                  e.currentTarget.style.background = "#42C8D6";
                   e.currentTarget.style.color = "#222222";
-                  e.currentTarget.style.borderColor = "#89E900";
+                  e.currentTarget.style.borderColor = "#42C8D6";
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.background = "rgba(34,34,34,0.6)";

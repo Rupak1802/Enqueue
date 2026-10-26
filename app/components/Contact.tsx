@@ -1,17 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Loader2 } from "lucide-react";
 
 const LinkedInIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
     <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-  </svg>
-);
-const TwitterIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M4 4l16 16M4 20L20 4"/>
   </svg>
 );
 const InstagramIcon = () => (
@@ -69,7 +64,7 @@ export default function Contact() {
 
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.5 }}
           style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-          <div style={{ width: 8, height: 8, background: "#89E900" }} />
+          <div style={{ width: 8, height: 8, background: "#42C8D6" }} />
           <span style={{ fontFamily: "monospace", fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "#ffffff" }}>Get In Touch</span>
         </motion.div>
 
@@ -89,26 +84,27 @@ export default function Contact() {
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {[{ icon: <Mail size={15} />, text: "enqueuethere@gmail.com" }, { icon: <Phone size={15} />, text: "+91 73054 29059" }].map(item => (
                 <div key={item.text} style={{ display: "flex", alignItems: "center", gap: 16 }}>
-                  <div style={{ width: 36, height: 36, border: "1px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "#89E900", flexShrink: 0, background: "rgba(137,233,0,0.08)" }}>
+                  <div style={{ width: 36, height: 36, border: "1px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "#42C8D6", flexShrink: 0, background: "rgba(66, 200, 214,0.08)" }}>
                     {item.icon}
                   </div>
                   <span style={{ fontFamily: "monospace", fontSize: 13, color: "#ffffff" }}>{item.text}</span>
                 </div>
               ))}
             </div>
-            <div style={{ display: "flex", gap: 10 }}>
-              {[
-                { icon: <LinkedInIcon />, href: "https://www.linkedin.com/in/enqueue-7771ab410/", label: "LinkedIn" },
-                { icon: <TwitterIcon />, href: "https://twitter.com/enqueue", label: "X" },
-                { icon: <InstagramIcon />, href: "https://www.instagram.com/enqueue_agencz?igsh=anExMGpqNGNuZDB1", label: "Instagram" },
-              ].map(s => (
-                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
-                  style={{ width: 40, height: 40, border: "1px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "#ffffff", textDecoration: "none", transition: "all 0.2s", background: "rgba(34,34,34,0.4)" }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = "#89E900"; e.currentTarget.style.color = "#89E900"; e.currentTarget.style.background = "rgba(137,233,0,0.1)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; e.currentTarget.style.color = "#ffffff"; e.currentTarget.style.background = "rgba(34,34,34,0.4)"; }}>
-                  {s.icon}
-                </a>
-              ))}
+            <div style={{ display: "gap", gap: 10 }}>
+              <div style={{ display: "flex", gap: 10 }}>
+                {[
+                  { icon: <LinkedInIcon />, href: "https://www.linkedin.com/in/enqueue-undefined-109234446", label: "LinkedIn" },
+                  { icon: <InstagramIcon />, href: "https://www.instagram.com/enqueuethere/", label: "Instagram" },
+                ].map(s => (
+                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
+                    style={{ width: 40, height: 40, border: "1px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "#ffffff", textDecoration: "none", transition: "all 0.2s", background: "rgba(34,34,34,0.4)" }}
+                    onMouseEnter={e => { e.currentTarget.style.borderColor = "#42C8D6"; e.currentTarget.style.color = "#42C8D6"; e.currentTarget.style.background = "rgba(66, 200, 214,0.1)"; }}
+                    onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; e.currentTarget.style.color = "#ffffff"; e.currentTarget.style.background = "rgba(34,34,34,0.4)"; }}>
+                    {s.icon}
+                  </a>
+                ))}
+              </div>
             </div>
             <div style={{ borderTop: "1px solid rgba(255,255,255,0.12)", paddingTop: 24 }}>
               <p style={{ fontFamily: "monospace", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#ffffff", marginBottom: 10 }}>Mission</p>
@@ -121,10 +117,44 @@ export default function Contact() {
           {/* Right — form */}
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.7, delay: 0.3 }}>
             {submitted ? (
-              <div style={{ border: "1px solid rgba(137,233,0,0.3)", background: "rgba(137,233,0,0.06)", padding: 48, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", minHeight: 400, backdropFilter: "blur(8px)" }}>
-                <div style={{ width: 48, height: 48, border: "1px solid #89E900", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 24, fontSize: 20, color: "#89E900" }}>✓</div>
-                <h3 style={{ fontSize: 18, fontWeight: 700, textTransform: "uppercase", color: "#ffffff", marginBottom: 12, letterSpacing: "0.06em" }}>Message Sent</h3>
-                <p style={{ color: "#ffffff", fontSize: 14 }}>We'll get back to you within 24 hours.</p>
+              <div style={{ border: "1px solid rgba(66, 200, 214,0.3)", background: "rgba(66, 200, 214,0.06)", padding: "48px 36px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", minHeight: 420, backdropFilter: "blur(8px)" }}>
+                <div style={{ width: 56, height: 56, border: "2px solid #42C8D6", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20, fontSize: 24, color: "#42C8D6", background: "rgba(66, 200, 214,0.12)" }}>✓</div>
+                <h3 style={{ fontSize: 20, fontWeight: 700, textTransform: "uppercase", color: "#ffffff", marginBottom: 12, letterSpacing: "0.08em" }}>Message Received!</h3>
+                <p style={{ color: "#ffffff", fontSize: 15, maxWidth: 400, lineHeight: 1.6, marginBottom: 8 }}>
+                  Thank you, <span style={{ color: "#42C8D6", fontWeight: 600 }}>{form.name}</span>. Your project details have been successfully submitted.
+                </p>
+                <p style={{ color: "rgba(255,255,255,0.75)", fontSize: 13, maxWidth: 420, lineHeight: 1.6, marginBottom: 28 }}>
+                  A confirmation email has been sent to <span style={{ color: "#42C8D6", textDecoration: "underline" }}>{form.email}</span>. Our team will review your requirements and get back to you within 24 hours.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setForm({ name: "", email: "", phone: "", company: "", service: "", message: "" });
+                    setSubmitted(false);
+                  }}
+                  style={{
+                    padding: "10px 24px",
+                    background: "transparent",
+                    color: "#42C8D6",
+                    border: "1px solid #42C8D6",
+                    fontFamily: "monospace",
+                    fontSize: 11,
+                    letterSpacing: "0.15em",
+                    textTransform: "uppercase",
+                    cursor: "pointer",
+                    transition: "all 0.2s",
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.background = "#42C8D6";
+                    e.currentTarget.style.color = "#121212";
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.background = "transparent";
+                    e.currentTarget.style.color = "#42C8D6";
+                  }}
+                >
+                  Send Another Message
+                </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
@@ -140,7 +170,7 @@ export default function Contact() {
                       value={form[f.name as keyof typeof form]}
                       onChange={e => setForm({ ...form, [f.name]: e.target.value })}
                       style={inputStyle}
-                      onFocus={e => (e.target.style.borderColor = "#89E900")}
+                      onFocus={e => (e.target.style.borderColor = "#42C8D6")}
                       onBlur={e => (e.target.style.borderColor = "rgba(255,255,255,0.2)")} />
                   </div>
                 ))}
@@ -157,14 +187,41 @@ export default function Contact() {
                   <textarea required rows={4} placeholder="Tell us about your project, goals, and timeline..."
                     value={form.message} onChange={e => setForm({ ...form, message: e.target.value })}
                     style={{ ...inputStyle, resize: "none" }}
-                    onFocus={e => (e.target.style.borderColor = "#89E900")}
+                    onFocus={e => (e.target.style.borderColor = "#42C8D6")}
                     onBlur={e => (e.target.style.borderColor = "rgba(255,255,255,0.2)")} />
                 </div>
                 <button type="submit" disabled={loading}
-                  style={{ padding: "14px 32px", background: loading ? "#ffffff" : "#ffffff", color: "#222222", fontWeight: 700, fontSize: 12, letterSpacing: "0.18em", textTransform: "uppercase", border: "none", cursor: loading ? "not-allowed" : "pointer", transition: "all 0.2s", marginTop: 4 }}
-                  onMouseEnter={e => { if (!loading) { e.currentTarget.style.background = "#89E900"; e.currentTarget.style.color = "#222222"; }}}
+                  style={{
+                    padding: "14px 32px",
+                    background: loading ? "rgba(255,255,255,0.4)" : "#ffffff",
+                    color: "#222222",
+                    fontWeight: 700,
+                    fontSize: 12,
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    border: "none",
+                    cursor: loading ? "not-allowed" : "pointer",
+                    transition: "all 0.2s",
+                    marginTop: 4,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: 10,
+                  }}
+                  onMouseEnter={e => { if (!loading) { e.currentTarget.style.background = "#42C8D6"; e.currentTarget.style.color = "#222222"; }}}
                   onMouseLeave={e => { if (!loading) { e.currentTarget.style.background = "#ffffff"; e.currentTarget.style.color = "#222222"; }}}>
-                  {loading ? "Sending..." : "Send Message"}
+                  {loading && (
+                    <span style={{
+                      display: "inline-block",
+                      width: 14,
+                      height: 14,
+                      border: "2px solid #222222",
+                      borderTopColor: "transparent",
+                      borderRadius: "50%",
+                      animation: "spin 0.8s linear infinite"
+                    }} />
+                  )}
+                  {loading ? "Sending Details..." : "Send Message"}
                 </button>
                 {error && (
                   <p style={{ fontFamily: "monospace", fontSize: 11, color: "#ff4f4f", letterSpacing: "0.1em", marginTop: 4 }}>

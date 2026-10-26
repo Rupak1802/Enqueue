@@ -8,11 +8,6 @@ const LinkedInIcon = () => (
     <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
   </svg>
 );
-const TwitterIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M4 4l16 16M4 20L20 4"/>
-  </svg>
-);
 const InstagramIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -40,11 +35,10 @@ const serviceLinks = [
 ];
 
 const socials = [
-  { icon: <LinkedInIcon />, href: "https://www.linkedin.com/in/enqueue-7771ab410/", label: "LinkedIn" },
-  { icon: <TwitterIcon />, href: "https://twitter.com/enqueue", label: "X/Twitter" },
-  { icon: <InstagramIcon />, href: "https://www.instagram.com/enqueue_agencz?igsh=anExMGpqNGNuZDB1", label: "Instagram" },
+  { icon: <LinkedInIcon />, href: "https://www.linkedin.com/in/enqueue-undefined-109234446", label: "LinkedIn" },
+  { icon: <InstagramIcon />, href: "https://www.instagram.com/enqueuethere/", label: "Instagram" },
   { icon: <WhatsAppIcon />, href: "https://wa.me/917305429059", label: "WhatsApp" },
-  { icon: <Mail size={16} />, href: "mailto:hello@enqueue.co", label: "Email" },
+  { icon: <Mail size={16} />, href: "mailto:enqueuethere@gmail.com", label: "Email" },
 ];
 
 export default function Footer() {
@@ -65,7 +59,7 @@ export default function Footer() {
               {socials.map(s => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
                   style={{ width: 38, height: 38, border: "1px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "#ffffff", textDecoration: "none", transition: "all 0.2s", background: "rgba(34,34,34,0.4)" }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = "#89E900"; e.currentTarget.style.color = "#89E900"; e.currentTarget.style.background = "rgba(137,233,0,0.1)"; }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = "#42C8D6"; e.currentTarget.style.color = "#42C8D6"; e.currentTarget.style.background = "rgba(66, 200, 214,0.1)"; }}
                   onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; e.currentTarget.style.color = "#ffffff"; e.currentTarget.style.background = "rgba(34,34,34,0.4)"; }}>
                   {s.icon}
                 </a>

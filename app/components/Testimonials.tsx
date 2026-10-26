@@ -168,8 +168,8 @@ export default function Testimonials() {
         <motion.div
           variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.5 }}
           style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-          <div style={{ width: 8, height: 8, background: "#89E900", boxShadow: "0 0 10px #89E900" }} />
-          <span style={{ fontFamily: "monospace", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "#89E900" }}>
+          <div style={{ width: 8, height: 8, background: "#42C8D6", boxShadow: "0 0 10px #42C8D6" }} />
+          <span style={{ fontFamily: "monospace", fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "#42C8D6" }}>
             Client Validations · Verified Deployments
           </span>
         </motion.div>
@@ -192,12 +192,12 @@ export default function Testimonials() {
             variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.6, delay: 0.15 }}
             style={{
               display: "inline-flex", alignItems: "center", gap: 10,
-              padding: "10px 18px", background: "rgba(137,233,0,0.08)",
-              border: "1px solid rgba(137,233,0,0.3)", backdropFilter: "blur(8px)",
+              padding: "10px 18px", background: "rgba(66, 200, 214,0.08)",
+              border: "1px solid rgba(66, 200, 214,0.3)", backdropFilter: "blur(8px)",
             }}>
             <span style={{
-              width: 8, height: 8, borderRadius: "50%", background: "#89E900",
-              boxShadow: "0 0 12px #89E900", display: "inline-block",
+              width: 8, height: 8, borderRadius: "50%", background: "#42C8D6",
+              boxShadow: "0 0 12px #42C8D6", display: "inline-block",
               animation: "pulseGlow 2s infinite ease-in-out",
             }} />
             <span style={{ fontFamily: "monospace", fontSize: 11, color: "#ffffff", letterSpacing: "0.15em", textTransform: "uppercase" }}>
@@ -216,7 +216,7 @@ export default function Testimonials() {
           }}>
           {trustStats.map(stat => (
             <div key={stat.label} style={{ background: "rgba(26,26,26,0.85)", padding: "24px 20px", backdropFilter: "blur(6px)" }}>
-              <div style={{ fontSize: "clamp(24px, 2.5vw, 32px)", fontWeight: 700, color: "#89E900", letterSpacing: "0.02em", marginBottom: 4 }}>
+              <div style={{ fontSize: "clamp(24px, 2.5vw, 32px)", fontWeight: 700, color: "#42C8D6", letterSpacing: "0.02em", marginBottom: 4 }}>
                 {stat.value}
               </div>
               <div style={{ fontFamily: "monospace", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)" }}>
@@ -245,9 +245,9 @@ export default function Testimonials() {
                   textTransform: "uppercase",
                   cursor: "pointer",
                   transition: "all 0.25s ease",
-                  background: isActive ? "#89E900" : "rgba(34,34,34,0.6)",
+                  background: isActive ? "#42C8D6" : "rgba(34,34,34,0.6)",
                   color: isActive ? "#222222" : "#ffffff",
-                  border: isActive ? "1px solid #89E900" : "1px solid rgba(255,255,255,0.2)",
+                  border: isActive ? "1px solid #42C8D6" : "1px solid rgba(255,255,255,0.2)",
                   fontWeight: isActive ? 700 : 400,
                   backdropFilter: "blur(6px)",
                   display: "inline-flex",
@@ -256,8 +256,8 @@ export default function Testimonials() {
                 }}
                 onMouseEnter={e => {
                   if (!isActive) {
-                    e.currentTarget.style.borderColor = "#89E900";
-                    e.currentTarget.style.color = "#89E900";
+                    e.currentTarget.style.borderColor = "#42C8D6";
+                    e.currentTarget.style.color = "#42C8D6";
                   }
                 }}
                 onMouseLeave={e => {
@@ -304,7 +304,7 @@ export default function Testimonials() {
                   onMouseLeave={() => setHoveredCard(null)}
                   style={{
                     background: isHovered ? "rgba(28,28,28,0.92)" : "rgba(22,22,22,0.8)",
-                    border: isHovered ? "1px solid #89E900" : "1px solid rgba(255,255,255,0.12)",
+                    border: isHovered ? "1px solid #42C8D6" : "1px solid rgba(255,255,255,0.12)",
                     padding: "36px 32px",
                     display: "flex",
                     flexDirection: "column",
@@ -312,7 +312,7 @@ export default function Testimonials() {
                     position: "relative",
                     transition: "border-color 0.3s ease, background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease",
                     transform: isHovered ? "translateY(-4px)" : "translateY(0)",
-                    boxShadow: isHovered ? "0 18px 45px -12px rgba(137,233,0,0.18)" : "none",
+                    boxShadow: isHovered ? "0 18px 45px -12px rgba(66, 200, 214,0.18)" : "none",
                     backdropFilter: "blur(10px)",
                   }}>
 
@@ -324,18 +324,18 @@ export default function Testimonials() {
                         fontFamily: "monospace",
                         letterSpacing: "0.18em",
                         textTransform: "uppercase",
-                        color: "#89E900",
-                        border: "1px solid rgba(137,233,0,0.35)",
+                        color: "#42C8D6",
+                        border: "1px solid rgba(66, 200, 214,0.35)",
                         padding: "4px 10px",
-                        background: "rgba(137,233,0,0.06)",
+                        background: "rgba(66, 200, 214,0.06)",
                       }}>
                         {item.category}
                       </span>
 
                       <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                         <span style={{
-                          width: 6, height: 6, borderRadius: "50%", background: "#89E900",
-                          boxShadow: "0 0 8px #89E900",
+                          width: 6, height: 6, borderRadius: "50%", background: "#42C8D6",
+                          boxShadow: "0 0 8px #42C8D6",
                         }} />
                         <span style={{ fontFamily: "monospace", fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)" }}>
                           Live Deployment
@@ -361,15 +361,15 @@ export default function Testimonials() {
                     {/* Metric Highlight Pill */}
                     <div style={{
                       padding: "10px 14px",
-                      background: isHovered ? "rgba(137,233,0,0.12)" : "rgba(137,233,0,0.07)",
-                      border: "1px solid rgba(137,233,0,0.28)",
+                      background: isHovered ? "rgba(66, 200, 214,0.12)" : "rgba(66, 200, 214,0.07)",
+                      border: "1px solid rgba(66, 200, 214,0.28)",
                       marginBottom: 20,
                       display: "flex",
                       alignItems: "center",
                       gap: 8,
                       transition: "background 0.3s ease",
                     }}>
-                      <span style={{ color: "#89E900", fontSize: 13 }}>✦</span>
+                      <span style={{ color: "#42C8D6", fontSize: 13 }}>✦</span>
                       <span style={{
                         fontFamily: "monospace",
                         fontSize: 11,
@@ -390,7 +390,7 @@ export default function Testimonials() {
                         left: -6,
                         fontSize: 48,
                         lineHeight: 1,
-                        color: "rgba(137,233,0,0.18)",
+                        color: "rgba(66, 200, 214,0.18)",
                         fontFamily: "'Playfair Display', Georgia, serif",
                         pointerEvents: "none",
                         userSelect: "none",
@@ -433,7 +433,7 @@ export default function Testimonials() {
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
                       <div style={{ display: "flex", gap: 3 }}>
                         {[...Array(item.rating)].map((_, sIdx) => (
-                          <span key={sIdx} style={{ color: "#89E900", fontSize: 13 }}>★</span>
+                          <span key={sIdx} style={{ color: "#42C8D6", fontSize: 13 }}>★</span>
                         ))}
                       </div>
                       <span style={{ fontFamily: "monospace", fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)" }}>
@@ -446,9 +446,9 @@ export default function Testimonials() {
                       <div style={{
                         width: 38,
                         height: 38,
-                        border: "1px solid #89E900",
-                        background: "rgba(137,233,0,0.1)",
-                        color: "#89E900",
+                        border: "1px solid #42C8D6",
+                        background: "rgba(66, 200, 214,0.1)",
+                        color: "#42C8D6",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -480,9 +480,9 @@ export default function Testimonials() {
                         alignItems: "center",
                         justifyContent: "space-between",
                         padding: "12px 18px",
-                        background: isHovered ? "#89E900" : "rgba(34,34,34,0.6)",
+                        background: isHovered ? "#42C8D6" : "rgba(34,34,34,0.6)",
                         color: isHovered ? "#222222" : "#ffffff",
-                        border: isHovered ? "1px solid #89E900" : "1px solid rgba(255,255,255,0.22)",
+                        border: isHovered ? "1px solid #42C8D6" : "1px solid rgba(255,255,255,0.22)",
                         textDecoration: "none",
                         fontFamily: "monospace",
                         fontSize: 10,
@@ -492,9 +492,9 @@ export default function Testimonials() {
                         transition: "all 0.25s ease",
                       }}
                       onMouseEnter={e => {
-                        e.currentTarget.style.background = "#89E900";
+                        e.currentTarget.style.background = "#42C8D6";
                         e.currentTarget.style.color = "#222222";
-                        e.currentTarget.style.borderColor = "#89E900";
+                        e.currentTarget.style.borderColor = "#42C8D6";
                       }}
                       onMouseLeave={e => {
                         if (!isHovered) {
@@ -520,8 +520,8 @@ export default function Testimonials() {
           style={{
             marginTop: 64,
             padding: "36px 40px",
-            border: "1px solid rgba(137,233,0,0.3)",
-            background: "rgba(137,233,0,0.05)",
+            border: "1px solid rgba(66, 200, 214,0.3)",
+            background: "rgba(66, 200, 214,0.05)",
             backdropFilter: "blur(8px)",
             display: "flex",
             justifyContent: "space-between",
@@ -530,7 +530,7 @@ export default function Testimonials() {
             gap: 24,
           }}>
           <div>
-            <div style={{ fontFamily: "monospace", fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "#89E900", marginBottom: 8 }}>
+            <div style={{ fontFamily: "monospace", fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "#42C8D6", marginBottom: 8 }}>
               Ready To Build Yours?
             </div>
             <div style={{ fontSize: "clamp(18px, 2.2vw, 24px)", fontWeight: 700, textTransform: "uppercase", color: "#ffffff", letterSpacing: "0.04em" }}>
@@ -542,7 +542,7 @@ export default function Testimonials() {
             href="#contact"
             style={{
               padding: "14px 32px",
-              background: "#89E900",
+              background: "#42C8D6",
               color: "#222222",
               fontWeight: 700,
               fontSize: 11,
@@ -558,7 +558,7 @@ export default function Testimonials() {
               e.currentTarget.style.background = "#ffffff";
             }}
             onMouseLeave={e => {
-              e.currentTarget.style.background = "#89E900";
+              e.currentTarget.style.background = "#42C8D6";
             }}>
             <span>Start Your Project</span>
             <span>→</span>

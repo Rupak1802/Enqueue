@@ -48,7 +48,7 @@ export default function Loader() {
           {/* Progress bar */}
           <div style={{ width: 200, height: 1, background: "#ffffff", position: "relative", overflow: "hidden" }}>
             <motion.div
-              style={{ position: "absolute", top: 0, left: 0, height: "100%", background: "#89E900", width: `${progress}%`, transition: "width 0.1s linear" }}
+              style={{ position: "absolute", top: 0, left: 0, height: "100%", background: "#42C8D6", width: `${progress}%`, transition: "width 0.1s linear" }}
             />
           </div>
 

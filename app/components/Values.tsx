@@ -20,7 +20,7 @@ export default function Values() {
 
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.5 }}
           style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-          <div style={{ width: 8, height: 8, background: "#89E900" }} />
+          <div style={{ width: 8, height: 8, background: "#42C8D6" }} />
           <span style={{ fontFamily: "monospace", fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "#ffffff" }}>Core Values</span>
         </motion.div>
 
@@ -35,9 +35,9 @@ export default function Values() {
               variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               style={{ background: "rgba(20,20,20,0.75)", padding: "36px 32px", transition: "background 0.3s", backdropFilter: "blur(6px)" }}
-              onMouseEnter={e => (e.currentTarget.style.background = "rgba(137,233,0,0.1)")}
+              onMouseEnter={e => (e.currentTarget.style.background = "rgba(66, 200, 214,0.1)")}
               onMouseLeave={e => (e.currentTarget.style.background = "rgba(20,20,20,0.75)")}>
-              <span style={{ fontFamily: "monospace", fontSize: 11, color: "rgba(137,233,0,0.7)", display: "block", marginBottom: 16 }}>{v.n}</span>
+              <span style={{ fontFamily: "monospace", fontSize: 11, color: "rgba(66, 200, 214,0.7)", display: "block", marginBottom: 16 }}>{v.n}</span>
               <h3 style={{ fontSize: 15, fontWeight: 700, textTransform: "uppercase", color: "#ffffff", letterSpacing: "0.06em", marginBottom: 12, lineHeight: 1.3 }}>{v.title}</h3>
               <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 14, lineHeight: 1.7, fontWeight: 300 }}>{v.desc}</p>
             </motion.div>
