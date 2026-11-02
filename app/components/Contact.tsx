@@ -82,7 +82,7 @@ export default function Contact() {
               Tell us about your project and we'll get back to you within 24 hours.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-              {[{ icon: <Mail size={15} />, text: "enqueuethere@gmail.com" }, { icon: <Phone size={15} />, text: "+91 73054 29059" }].map(item => (
+              {[{ icon: <Mail size={15} />, text: "enqueuethere@gmail.com" }, { icon: <Phone size={15} />, text: "+91 90420 43904" }].map(item => (
                 <div key={item.text} style={{ display: "flex", alignItems: "center", gap: 16 }}>
                   <div style={{ width: 36, height: 36, border: "1px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "#42C8D6", flexShrink: 0, background: "rgba(66, 200, 214,0.08)" }}>
                     {item.icon}

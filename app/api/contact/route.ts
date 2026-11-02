@@ -188,7 +188,7 @@ ${company ? `- Company: ${company}\n` : ""}- Service Requested: ${service}
 ${message}
 
 If you have urgent questions, you can reach us at:
-Phone: +91 73054 29059
+Phone: +91 9042043904
 Email: ${ADMIN_EMAIL}
 
 Best regards,
@@ -269,7 +269,7 @@ https://enqueue.in
                 Need to discuss something urgently or provide additional project files?
               </p>
               <p style="margin: 0; font-family: monospace; font-size: 13px; color: #ffffff;">
-                Call us at <a href="tel:+919042043904" style="color: #42C8D6; text-decoration: none;">+91 73054 29059</a> or reply directly to this email (<a href="mailto:${ADMIN_EMAIL}" style="color: #42C8D6; text-decoration: none;">${ADMIN_EMAIL}</a>).
+                Call us at <a href="tel:+919042043904" style="color: #42C8D6; text-decoration: none;">+91 90420 43904</a> or reply directly to this email (<a href="mailto:${ADMIN_EMAIL}" style="color: #42C8D6; text-decoration: none;">${ADMIN_EMAIL}</a>).
               </p>
             </div>
 
