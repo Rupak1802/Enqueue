@@ -37,7 +37,7 @@ const serviceLinks = [
 const socials = [
   { icon: <LinkedInIcon />, href: "https://www.linkedin.com/in/enqueue-undefined-109234446", label: "LinkedIn" },
   { icon: <InstagramIcon />, href: "https://www.instagram.com/enqueuethere/", label: "Instagram" },
-  { icon: <WhatsAppIcon />, href: "https://wa.me/917305429059", label: "WhatsApp" },
+  { icon: <WhatsAppIcon />, href: "https://wa.me/919042043904", label: "WhatsApp" },
   { icon: <Mail size={16} />, href: "mailto:enqueuethere@gmail.com", label: "Email" },
 ];
 

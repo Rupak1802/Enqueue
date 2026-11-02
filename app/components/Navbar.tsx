@@ -161,7 +161,7 @@ export default function Navbar() {
                   {[
                     { href: "https://www.linkedin.com/in/enqueue-undefined-109234446", label: "LI" },
                     { href: "https://instagram.com/enqueuethere/", label: "IG" },
-                    { href: "https://wa.me/917305429059", label: "WA" },
+                    { href: "https://wa.me/919042043904", label: "WA" },
                   ].map(s => (
                     <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                       style={{ width: 32, height: 32, border: "1px solid rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "#ffffff", textDecoration: "none", fontFamily: "monospace", fontSize: 9, letterSpacing: "0.1em", transition: "all 0.2s" }}

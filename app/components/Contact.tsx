@@ -161,7 +161,7 @@ export default function Contact() {
                 {[
                   { name: "name",    label: "Full Name *",      type: "text",  placeholder: "Your full name",    required: true  },
                   { name: "email",   label: "Email Address *",  type: "email", placeholder: "your@email.com",    required: true  },
-                  { name: "phone",   label: "Mobile Number *",  type: "tel",   placeholder: "+91 7305429059", required: true  },
+                  { name: "phone",   label: "Mobile Number *",  type: "tel",   placeholder: "+91 9876543210", required: true  },
                   { name: "company", label: "Company",          type: "text",  placeholder: "Your company name", required: false },
                 ].map(f => (
                   <div key={f.name}>
